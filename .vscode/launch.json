@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Image Classifier Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}/modules/ImageClassifierService/app/}",
+            "remoteRoot": "/app/",
+            "port": 3000,
+            "secret": "glovebox",
+            "host": "127.0.0.1"
+        },
+        {
+            "name": "Fake Flower Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}/modules/FakeFlowers/app/",
+            "remoteRoot": "/",
+            "port": 3001,
+            "secret": "glovebox",
+            "host": "127.0.0.1"
+        },
+        {
+            "name": "Image Server Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "localRoot": "${workspaceFolder}/modules/ImageServer/app/}",
+            "remoteRoot": "/app/",
+            "port": 3002,
+            "secret": "glovebox",
+            "host": "127.0.0.1"
+        }
+    ]
+}
