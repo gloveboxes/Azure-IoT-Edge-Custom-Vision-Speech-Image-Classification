@@ -4,7 +4,7 @@
 |Platform| [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/)|
 |Date|As at Oct 2018|
 
-# Image Classification running on Azure IoT Edge
+# Edge Devices running Image Classification with Azure IoT Edge
 
 The scenarios for this Machine Learning Image Classification solution include self-service shopping for vision impaired people or someone new to a country who is unfamiliar with local product names.
 
