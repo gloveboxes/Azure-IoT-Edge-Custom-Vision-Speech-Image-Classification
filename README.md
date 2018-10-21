@@ -64,6 +64,8 @@ So with that overview of Azure IoT Edge here were my initial considerations and 
 
     - As a workaround, if your development device is locked to Windows then use Ubuntu in Virtual Box which allows USB device pass-through which you can then pass-through to Docker in the Virtual Machine. A bit convoluted but it does work.
 
+![raspberry pi image classifier](docs/raspberry-pi-image-classifier.jpg)
+
 ## Azure Services
 
 ### Creating the Fruit Classification Model
