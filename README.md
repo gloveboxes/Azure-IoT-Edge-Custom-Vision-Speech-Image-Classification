@@ -2,6 +2,8 @@
 |----|---|
 |Solution| Azure Machine Learning & Image Classification|
 |Platform| [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/)|
+|Resources
+| [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/) [Azure IoT Hub](https://azure.microsoft.com/en-au/services/iot-hub/) |
 |Date|As at Oct 2018|
 
 # Image Classification with Azure IoT Edge
@@ -44,7 +46,7 @@ The main components for an IoT Edge solution are:-
 
 3. Routes. Routes define message paths between modules and with IoT Hub.
 
-4. Properties. You can set the "desired" properties for a module from Azure IoT Hub. For example you might want to set a threshold property for a temperature alert.
+4. Properties. You can set the "desired" properties for a module from Azure IoT Hub. For example, you might want to set a threshold property for a temperature alert.
 
 5. Create Options. Create Options tell Docker runtime what options to start the Module/Docker Container with. For example, you may wish to open ports for REST APIs or debugging ports, define paths to devices such as a USB Camera, set environment variables, or enable privilege mode for certain hardware operations.
 
@@ -97,6 +99,8 @@ This "Image Classification" module in this sample includes a simple fruit classi
    ![choose docker](docs/export-choose-your-platform.png)
 
 4. Download the docker file and unzip and you have a ready-made Docker solution containing a Python Flask REST API. This was how I created the Azure IoT Edge Image Classification module. Too easy:)
+
+## Azure Speech Services
 
 ## How to install and run the solution
 
