@@ -12,7 +12,7 @@ The scenarios I had in mind when developing this Machine Learning Image Classifi
 
 At a high level, the solution takes a photo of a piece of fruit, gets the name of the fruit from a trained image classifier, converts the name of the fruit to speech and plays back the name of the fruit on the attached speaker.
 
-The solution runs of [Azure IoT Edge](#azure-iot-edge-overview) and consists of a number of services.
+The solution runs of [Azure IoT Edge](#what-is-azure-iot-edge) and consists of a number of services.
 
 1. The **Camera Capture Module** is responsible for capturing an image from the camera, calling the Image Classification REST API, then calling the Text to Speech REST API and finally playing bask in the classified image label on the speaker.  
 
