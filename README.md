@@ -3,22 +3,22 @@
 |Solution| Azure Machine Learning, Image Classification & Intelligent Edge Devices|
 |Platform| [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/)|
 |Documentation | [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/), [Azure Custom Vision](https://azure.microsoft.com/en-au/services/cognitive-services/custom-vision-service/), [Azure Speech services](https://azure.microsoft.com/en-au/services/cognitive-services/speech-services/),  [Azure Functions on Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-function), [Stream Analytics](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-stream-analytics), [Machine Learning services](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning) |
-|Video Training|[Enable edge intelligence with Azure IoT Edge](https://channel9.msdn.com/events/Connect/2017/T253),|
+|Video Training|[Enable edge intelligence with Azure IoT Edge](https://channel9.msdn.com/events/Connect/2017/T253)|
 |Date|As at Oct 2018|
 
 <!-- TOC -->
 
 - [1. Image Classification with Azure IoT Edge](#1-image-classification-with-azure-iot-edge)
     - [1.1. Solution Overview](#11-solution-overview)
-    - [1.2. What is Azure IoT Edge?](#12-what-is-azure-iot-edge)
-        - [1.2.1. Azure IoT Edge in Action](#121-azure-iot-edge-in-action)
-    - [1.3. Solution Architectural Considerations](#13-solution-architectural-considerations)
-    - [1.4. Azure Services](#14-azure-services)
-        - [1.4.1. Creating the Fruit Classification Model](#141-creating-the-fruit-classification-model)
-        - [1.4.2. Exporting an Azure Custom Vision Model](#142-exporting-an-azure-custom-vision-model)
-            - [1.4.2.1. To export your model](#1421-to-export-your-model)
-    - [1.5. Azure Speech Services](#15-azure-speech-services)
-    - [1.6. How to install and run the solution](#16-how-to-install-and-run-the-solution)
+- [2. What is Azure IoT Edge?](#2-what-is-azure-iot-edge)
+    - [2.1. Azure IoT Edge in Action](#21-azure-iot-edge-in-action)
+    - [2.2. Solution Architectural Considerations](#22-solution-architectural-considerations)
+- [3. Azure Services](#3-azure-services)
+    - [3.1. Creating the Fruit Classification Model](#31-creating-the-fruit-classification-model)
+    - [3.2. Exporting an Azure Custom Vision Model](#32-exporting-an-azure-custom-vision-model)
+        - [3.2.1. To export your model](#321-to-export-your-model)
+    - [3.3. Azure Speech Services](#33-azure-speech-services)
+- [4. How to install and run the solution](#4-how-to-install-and-run-the-solution)
 
 <!-- /TOC -->
 
@@ -50,7 +50,7 @@ The solution runs of [Azure IoT Edge](#what-is-azure-iot-edge) and consists of a
 
 ![IoT Edge Solution Architecture](docs/Architecture.jpg)
 
-## 1.2. What is Azure IoT Edge?
+# 2. What is Azure IoT Edge?
 
 The solution is built on [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/) which is part of the Azure IoT Hub service and is used to define, secure and deploy a solution to an edge device. It also provides cloud-based central monitoring and reporting of the edge device.
 
@@ -68,11 +68,11 @@ The main components for an IoT Edge solution are:-
 
 6. [Deployment Manifest](https://docs.microsoft.com/en-us/azure/iot-edge/module-composition). The Deployment Manifest tells the IoT Edge runtime what modules to deploy and what container registry to pull them from and includes the routes and create options information.
 
-### 1.2.1. Azure IoT Edge in Action
+## 2.1. Azure IoT Edge in Action
 
 ![iot edge in action](docs/iot-edge-in-action.jpg)
 
-## 1.3. Solution Architectural Considerations
+## 2.2. Solution Architectural Considerations
 
 So with that overview of Azure IoT Edge here were my initial considerations and constraints for the solution.
 
@@ -88,19 +88,19 @@ So with that overview of Azure IoT Edge here were my initial considerations and 
 
 ![raspberry pi image classifier](docs/raspberry-pi-image-classifier.jpg)
 
-## 1.4. Azure Services
+# 3. Azure Services
 
-### 1.4.1. Creating the Fruit Classification Model
+## 3.1. Creating the Fruit Classification Model
 
 The [Azure Custom Vision](https://customvision.ai/) service is a simple way to create an image classification machine learning model without having to be a data science or machine learning expert. You simply upload multiple collections of labeled images. For example, you upload a collection of bananas images and you label them as 'bananas'.
 
 To create your own classification model read [How to build a classifier with Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) for more information. It is important to have a good variety of labeled images so be sure to read [How to improve your classifier](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier) for more information.
 
-### 1.4.2. Exporting an Azure Custom Vision Model
+## 3.2. Exporting an Azure Custom Vision Model
 
 This "Image Classification" module in this sample includes a simple fruit classification model that was exported from Azure Custom Vision. Be sure to read how to [Export your model for use with mobile devices](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/export-your-model). It is important to select one of the "**compact**" domains from the project settings page otherwise you will not be able to export the model.
 
-#### 1.4.2.1. To export your model
+### 3.2.1. To export your model
 
 1. From the **Performance** tab of your Custom Vision project click **Export**.
 
@@ -116,9 +116,9 @@ This "Image Classification" module in this sample includes a simple fruit classi
 
 4. Download the docker file and unzip and you have a ready-made Docker solution containing a Python Flask REST API. This was how I created the Azure IoT Edge Image Classification module. Too easy:)
 
-## 1.5. Azure Speech Services
+## 3.3. Azure Speech Services
 
-## 1.6. How to install and run the solution
+# 4. How to install and run the solution
 
 1. Clone this GitHub
 
