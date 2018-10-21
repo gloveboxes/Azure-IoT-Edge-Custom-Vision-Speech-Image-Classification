@@ -6,7 +6,7 @@
 
 # Image Classification running on Azure IoT Edge
 
-The scenarios I had in mind when developing this Machine Learning Image Classification solution was self-service shopping for someone with impaired vision or maybe someone new to a country who might not know the local name of a product.
+The scenarios for this Machine Learning Image Classification solution include self-service shopping for vision impaired people or someone new to a country who is unfamiliar with local product names.
 
 ## Solution Overview
 
@@ -49,6 +49,10 @@ The main components for an IoT Edge solution are:-
 5. Create Options. Create Options tell Docker runtime what options to start the Module/Docker Container with. For example, you may wish to open ports for REST APIs or debugging ports, define paths to devices such as a USB Camera, set environment variables, or enable privilege mode for certain hardware operations.
 
 6. [Deployment Manifest](https://docs.microsoft.com/en-us/azure/iot-edge/module-composition). The Deployment Manifest tells the IoT Edge runtime what modules to deploy and what container registry to pull them from and includes the routes and create options information.
+
+### Azure IoT Edge in Action
+
+![iot edge in action](docs/iot-edge-in-action.jpg)
 
 ## Solution Architectural Considerations
 
@@ -94,7 +98,15 @@ This "Image Classification" module in this sample includes a simple fruit classi
 
 4. Download the docker file and unzip and you have a ready-made Docker solution containing a Python Flask REST API. This was how I created the Azure IoT Edge Image Classification module. Too easy:)
 
+## How to install and run the solution
 
+1. Clone this GitHub
+
+2. [Deploy your first IoT Edge module to a Linux x64 device](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux)
+
+3. Install Visual Studio Code along with IoT Edge Extension
+
+4. Create
 
 
 
