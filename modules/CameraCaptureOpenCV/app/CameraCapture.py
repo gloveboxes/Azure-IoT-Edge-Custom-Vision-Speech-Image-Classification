@@ -21,20 +21,9 @@ import VideoStream
 from VideoStream import VideoStream
 import text2speech
 
-jpgdata = []
-
-
-def addImage(imageName):
-    f = open(imageName, 'r+')
-    jpgdata.append(f.read())
-    f.close()
-
-
-imageCount = len(jpgdata)
+maxRetry = 5
 lastTagSpoken = ''
-
 count = 0
-
 
 class CameraCapture(object):
 
@@ -59,17 +48,13 @@ class CameraCapture(object):
         self.imageProcessingEndpoint = imageProcessingEndpoint
         self.imageProcessingParams = ""
         self.sendToHubCallback = sendToHubCallback
+        self.tts.Text2Speech('Starting scanner')
 
         if self.__IsInt(videoPath):
             # case of a usb camera (usually mounted at /dev/video* where * is an int)
             self.isWebcam = True
-        
-        
-        
-        self.vs = None
-        
-        
 
+        self.vs = None
 
     def __buildSentence(self, tag):
         vowels = ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U')
@@ -81,14 +66,25 @@ class CameraCapture(object):
         return sentence + tag
 
     def __sendFrameForProcessing(self, frame):
-        global count, jpgdata, lastTagSpoken
+        global count, lastTagSpoken
         count = count + 1
-        # time.sleep(0.5)
         print("send frame: " + str(count))
 
         headers = {'Content-Type': 'application/octet-stream'}
-        response = requests.post(self.imageProcessingEndpoint, headers=headers,
-                                 params=self.imageProcessingParams, data=frame)
+
+        retry = 0
+        while retry < maxRetry:
+            try:
+                response = requests.post(self.imageProcessingEndpoint, headers=headers,
+                                        params=self.imageProcessingParams, data=frame)
+                break
+            except:
+                retry = retry + 1
+                print('Image Classification REST Endpoint - Retry attempt # ' + str(retry))
+                time.sleep(retry)
+
+        if retry >= maxRetry:
+            return []
 
         sortResponse = sorted(
             response.json(), key=lambda k: k['Probability'], reverse=True)[0]
@@ -123,11 +119,18 @@ class CameraCapture(object):
             # Process externally
             if self.imageProcessingEndpoint != "":
                 encodedFrame = cv2.imencode(".jpg", frame)[1].tostring()
-                response = self.__sendFrameForProcessing(encodedFrame)
+                try:
+                    response = self.__sendFrameForProcessing(encodedFrame)
+                except:
+                     print('connectivity issue')
 
                 # forwarding outcome of external processing to the EdgeHub
                 if response != "[]" and self.sendToHubCallback is not None:
-                    self.sendToHubCallback(response)
+                    try:
+                        self.sendToHubCallback(response)
+                    except:
+                        print(
+                            'Issue sending telemetry')
 
     def __exit__(self, exception_type, exception_value, traceback):
         pass

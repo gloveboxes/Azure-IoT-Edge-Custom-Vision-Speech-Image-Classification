@@ -5,34 +5,53 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Image Classifier Python: Attach",
+            "name": "Python: Current File (Integrated Terminal)",
             "type": "python",
-            "request": "attach",
-            "localRoot": "${workspaceFolder}/modules/ImageClassifierService/app/}",
-            "remoteRoot": "/app/",
-            "port": 3000,
-            "secret": "glovebox",
-            "host": "127.0.0.1"
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
         },
         {
-            "name": "Fake Flower Python: Attach",
+            "name": "Python: Attach",
             "type": "python",
             "request": "attach",
-            "localRoot": "${workspaceFolder}/modules/FakeFlowers/app/",
-            "remoteRoot": "/",
-            "port": 3001,
-            "secret": "glovebox",
-            "host": "127.0.0.1"
+            "port": 5678,
+            "host": "localhost"
         },
         {
-            "name": "Image Server Python: Attach",
+            "name": "Python: Django",
             "type": "python",
-            "request": "attach",
-            "localRoot": "${workspaceFolder}/modules/ImageServer/app/}",
-            "remoteRoot": "/app/",
-            "port": 3002,
-            "secret": "glovebox",
-            "host": "127.0.0.1"
+            "request": "launch",
+            "program": "${workspaceFolder}/manage.py",
+            "console": "integratedTerminal",
+            "args": [
+                "runserver",
+                "--noreload",
+                "--nothreading"
+            ],
+            "django": true
+        },
+        {
+            "name": "Python: Flask",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "app.py"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Python: Current File (External Terminal)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
         }
     ]
 }
