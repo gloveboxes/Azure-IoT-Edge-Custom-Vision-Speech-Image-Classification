@@ -2,7 +2,7 @@
 |----|---|
 |Solution| Azure Machine Learning, Image Classification & Intelligent Edge Devices|
 |Platform| [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/)|
-|Resources | [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/), [Azure Custom Vision](https://azure.microsoft.com/en-au/services/cognitive-services/custom-vision-service/), [Azure Speech services](https://azure.microsoft.com/en-au/services/cognitive-services/speech-services/), [Video Introduction: Enable edge intelligence with Azure IoT Edge](https://channel9.msdn.com/events/Connect/2017/T253) |
+|Resources | [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/), [Azure Custom Vision](https://azure.microsoft.com/en-au/services/cognitive-services/custom-vision-service/), [Azure Speech services](https://azure.microsoft.com/en-au/services/cognitive-services/speech-services/), [Video Introduction: Enable edge intelligence with Azure IoT Edge](https://channel9.msdn.com/events/Connect/2017/T253), [Azure Functions on Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-function), [Stream Analytics](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-stream-analytics), [Machine Learning services](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning) |
 |Date|As at Oct 2018|
 
 # Image Classification with Azure IoT Edge
