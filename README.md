@@ -1,9 +1,9 @@
 |Author|Dave Glover, Microsoft Australia|
 |----|---|
 |Solution| Azure Machine Learning, Image Classification & Intelligent Edge Devices|
-|Platform| [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/)|
-|Documentation | [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/), [Azure Custom Vision](https://azure.microsoft.com/en-au/services/cognitive-services/custom-vision-service/), [Azure Speech services](https://azure.microsoft.com/en-au/services/cognitive-services/speech-services/),  [Azure Functions on Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-function), [Stream Analytics](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-stream-analytics), [Machine Learning services](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning) |
-|Video Training|[Enable edge intelligence with Azure IoT Edge](https://channel9.msdn.com/events/Connect/2017/T253)|
+|Platform| [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/?WT.mc_id=iot-0000-dglover)|
+|Documentation | [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/?WT.mc_id=iot-0000-dglover), [Azure Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/?WT.mc_id=iot-0000-dglover), [Azure Speech services](https://azure.microsoft.com/services/cognitive-services/speech-services/?WT.mc_id=iot-0000-dglover),  [Azure Functions on Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-function?WT.mc_id=iot-0000-dglover), [Stream Analytics](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics?WT.mc_id=iot-0000-dglover), [Machine Learning services](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning?WT.mc_id=iot-0000-dglover) |
+|Video Training|[Enable edge intelligence with Azure IoT Edge](https://channel9.msdn.com/events/Connect/2017/T253?WT.mc_id=iot-0000-dglover)|
 |Date|As at Oct 2018|
 
 <!-- TOC -->
@@ -52,13 +52,13 @@ The solution runs of [Azure IoT Edge](#what-is-azure-iot-edge) and consists of a
 
 # 2. What is Azure IoT Edge?
 
-The solution is built on [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/) which is part of the Azure IoT Hub service and is used to define, secure and deploy a solution to an edge device. It also provides cloud-based central monitoring and reporting of the edge device.
+The solution is built on [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/?WT.mc_id=iot-0000-dglover) which is part of the Azure IoT Hub service and is used to define, secure and deploy a solution to an edge device. It also provides cloud-based central monitoring and reporting of the edge device.
 
 The main components for an IoT Edge solution are:-
 
-1. The [IoT Edge Runtime](https://docs.microsoft.com/en-us/azure/iot-edge/iot-edge-runtime) which is installed on the local edge device and consists of two main components. The **IoT Edge "hub"**, responsible for communications, and the **IoT Edge "agent"**, responsible for running and monitoring modules on the edge device.
+1. The [IoT Edge Runtime](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime?WT.mc_id=iot-0000-dglover) which is installed on the local edge device and consists of two main components. The **IoT Edge "hub"**, responsible for communications, and the **IoT Edge "agent"**, responsible for running and monitoring modules on the edge device.
 
-2. [Modules](https://docs.microsoft.com/en-us/azure/iot-edge/iot-edge-modules). Modules are the unit of deployment. Modules are docker images pulled from a registry such as the [Azure Container Registry](https://azure.microsoft.com/en-au/services/container-registry/), or [Docker Hub](https://hub.docker.com/). Modules can be custom developed, built as [Azure Functions](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-function), or exported services from [Azure Custom Vision](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-stream-analytics), [Azure Machine Learning](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning), or [Azure Stream Analytics](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-stream-analytics).
+2. [Modules](https://docs.microsoft.com/azure/iot-edge/iot-edge-modules?WT.mc_id=iot-0000-dglover). Modules are the unit of deployment. Modules are docker images pulled from a registry such as the [Azure Container Registry](https://azure.microsoft.com/services/container-registry/?WT.mc_id=iot-0000-dglover), or [Docker Hub](https://hub.docker.com/). Modules can be custom developed, built as [Azure Functions](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-function?WT.mc_id=iot-0000-dglover), or exported services from [Azure Custom Vision](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics?WT.mc_id=iot-0000-dglover), [Azure Machine Learning](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning?WT.mc_id=iot-0000-dglover), or [Azure Stream Analytics](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics?WT.mc_id=iot-0000-dglover).
 
 3. Routes. Routes define message paths between modules and with IoT Hub.
 
@@ -66,7 +66,7 @@ The main components for an IoT Edge solution are:-
 
 5. Create Options. Create Options tell Docker runtime what options to start the Module/Docker Container with. For example, you may wish to open ports for REST APIs or debugging ports, define paths to devices such as a USB Camera, set environment variables, or enable privilege mode for certain hardware operations.
 
-6. [Deployment Manifest](https://docs.microsoft.com/en-us/azure/iot-edge/module-composition). The Deployment Manifest tells the IoT Edge runtime what modules to deploy and what container registry to pull them from and includes the routes and create options information.
+6. [Deployment Manifest](https://docs.microsoft.com/azure/iot-edge/module-composition?WT.mc_id=iot-0000-dglover). The Deployment Manifest tells the IoT Edge runtime what modules to deploy and what container registry to pull them from and includes the routes and create options information.
 
 ## 2.1. Azure IoT Edge in Action
 
@@ -94,11 +94,11 @@ So with that overview of Azure IoT Edge here were my initial considerations and 
 
 The [Azure Custom Vision](https://customvision.ai/) service is a simple way to create an image classification machine learning model without having to be a data science or machine learning expert. You simply upload multiple collections of labeled images. For example, you upload a collection of bananas images and you label them as 'bananas'.
 
-To create your own classification model read [How to build a classifier with Custom Vision](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) for more information. It is important to have a good variety of labeled images so be sure to read [How to improve your classifier](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier) for more information.
+To create your own classification model read [How to build a classifier with Custom Vision](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier?WT.mc_id=iot-0000-dglover) for more information. It is important to have a good variety of labeled images so be sure to read [How to improve your classifier](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-improving-your-classifier?WT.mc_id=iot-0000-dglover) for more information.
 
 ## 3.2. Exporting an Azure Custom Vision Model
 
-This "Image Classification" module in this sample includes a simple fruit classification model that was exported from Azure Custom Vision. Be sure to read how to [Export your model for use with mobile devices](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/export-your-model). It is important to select one of the "**compact**" domains from the project settings page otherwise you will not be able to export the model.
+This "Image Classification" module in this sample includes a simple fruit classification model that was exported from Azure Custom Vision. Be sure to read how to [Export your model for use with mobile devices](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/export-your-model?WT.mc_id=iot-0000-dglover). It is important to select one of the "**compact**" domains from the project settings page otherwise you will not be able to export the model.
 
 ### 3.2.1. To export your model
 
@@ -122,7 +122,7 @@ This "Image Classification" module in this sample includes a simple fruit classi
 
 1. Clone this GitHub
 
-2. [Deploy your first IoT Edge module to a Linux x64 device](https://docs.microsoft.com/en-us/azure/iot-edge/quickstart-linux)
+2. [Deploy your first IoT Edge module to a Linux x64 device](https://docs.microsoft.com/azure/iot-edge/quickstart-linux?WT.mc_id=iot-0000-dglover)
 
 3. Install Visual Studio Code along with IoT Edge Extension
 
